@@ -6,7 +6,7 @@ import { ProductMap } from "@/components/product-map";
 
 type PageTemplateProps = {
   content: PageContent;
-  sectionLabel: "Solucao" | "Caso de uso";
+  sectionLabel: "Solucao" | "Caso de uso" | "Segmento";
 };
 
 export function PageTemplate({ content, sectionLabel }: PageTemplateProps) {

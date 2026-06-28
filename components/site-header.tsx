@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, MapPinned, Menu, X } from "lucide-react";
-import { brand, solutions, useCases } from "@/data/site";
+import { FeatureIcon } from "@/components/icons";
+import { brand, segments, solutions, useCases } from "@/data/site";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegacao principal">
-          <div className="nav-popover">
+          <div className="nav-popover nav-popover--solutions">
             <button className="nav-trigger" type="button">
               Solucoes
               <ChevronDown aria-hidden="true" className="h-4 w-4" />
@@ -38,18 +39,34 @@ export function SiteHeader() {
             </div>
           </div>
 
-          <div className="nav-popover">
+          <div className="nav-popover nav-popover--cases">
             <button className="nav-trigger" type="button">
               Casos de uso
               <ChevronDown aria-hidden="true" className="h-4 w-4" />
             </button>
-            <div className="nav-menu">
-              {useCases.map((useCase) => (
-                <Link href={`/casos-de-uso/${useCase.slug}`} key={useCase.slug}>
-                  <span>{useCase.navTitle}</span>
-                  <small>{useCase.heroMetric}</small>
-                </Link>
-              ))}
+            <div className="nav-menu nav-menu--cases">
+              <div className="nav-menu__usecases">
+                <span className="nav-menu__label">Casos de uso</span>
+                {useCases.map((useCase) => (
+                  <Link href={`/casos-de-uso/${useCase.slug}`} key={useCase.slug}>
+                    <span>{useCase.navTitle}</span>
+                    <small>{useCase.description}</small>
+                  </Link>
+                ))}
+              </div>
+              <div className="nav-menu__segments">
+                <span className="nav-menu__label">Segmentos</span>
+                <p>A rua1.ai organiza ferramentas e dados para mercados com dinamicas territoriais diferentes.</p>
+                <div className="nav-menu__segment-grid">
+                  {segments.map((segment) => (
+                    <Link href={`/casos-de-uso/segmentos/${segment.slug}`} key={segment.slug}>
+                      <FeatureIcon name={segment.features[0].icon} />
+                      <span>{segment.navTitle}</span>
+                      <small>{segment.description}</small>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -93,6 +110,14 @@ export function SiteHeader() {
             {useCases.map((useCase) => (
               <Link href={`/casos-de-uso/${useCase.slug}`} key={useCase.slug} onClick={() => setIsOpen(false)}>
                 {useCase.navTitle}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <span className="mobile-panel__label">Segmentos</span>
+            {segments.map((segment) => (
+              <Link href={`/casos-de-uso/segmentos/${segment.slug}`} key={segment.slug} onClick={() => setIsOpen(false)}>
+                {segment.navTitle}
               </Link>
             ))}
           </div>

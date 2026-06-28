@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { solutions, useCases } from "@/data/site";
+import { segments, solutions, useCases } from "@/data/site";
 
 const baseUrl = "https://rua1.ai";
 
@@ -19,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...useCases.map((useCase) => ({
       url: `${baseUrl}/casos-de-uso/${useCase.slug}`,
+      lastModified: new Date(),
+    })),
+    ...segments.map((segment) => ({
+      url: `${baseUrl}/casos-de-uso/segmentos/${segment.slug}`,
       lastModified: new Date(),
     })),
   ];

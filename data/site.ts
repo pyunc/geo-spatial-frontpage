@@ -10,7 +10,17 @@ export type IconName =
   | "Route"
   | "Layers"
   | "Radar"
-  | "Sparkles";
+  | "Sparkles"
+  | "Sprout"
+  | "ShoppingCart"
+  | "Car"
+  | "HardHat"
+  | "GraduationCap"
+  | "Zap"
+  | "CreditCard"
+  | "ShoppingBag"
+  | "HeartPulse"
+  | "Satellite";
 
 export type Metric = {
   value: string;
@@ -427,6 +437,479 @@ export const useCases: PageContent[] = [
   },
 ];
 
+export const segments: PageContent[] = [
+  {
+    slug: "agro",
+    navTitle: "Agro",
+    title: "Agro",
+    eyebrow: "Segmento",
+    description:
+      "Para empresas que vendem produtos, servicos, credito, tecnologia ou insumos para produtores e negocios rurais.",
+    primaryCta: "Mapear agro",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Territorios rurais com leitura comercial",
+    visualMode: "market",
+    metrics: [
+      { value: "Safras", label: "e polos produtivos no mapa" },
+      { value: "ICP", label: "por perfil de produtor e regiao" },
+      { value: "Rotas", label: "para campo, revenda e distribuicao" },
+    ],
+    features: [
+      {
+        title: "Mercados agro prioritarios",
+        description:
+          "Compare regioes por cultura, potencial economico, distancia operacional e densidade de produtores.",
+        icon: "Sprout",
+      },
+      {
+        title: "Prospeccao por territorio",
+        description:
+          "Monte listas de contas e parceiros com fit para produtos, servicos e credito rural.",
+        icon: "Target",
+      },
+      {
+        title: "Expansao de cobertura",
+        description:
+          "Planeje representantes, distribuidores e pontos de apoio com base em lacunas regionais.",
+        icon: "Route",
+      },
+    ],
+    workflow: [
+      "Defina culturas, regioes e perfis de cliente prioritarios.",
+      "Cruze demanda, empresas, rotas e cobertura comercial atual.",
+      "Priorize territorios, listas e acoes para o time de campo.",
+    ],
+    outcomes: [
+      "Mais clareza sobre onde concentrar distribuicao e vendas.",
+      "Carteiras rurais com melhor contexto regional.",
+      "Expansao comercial com menos dependencia de intuicao local.",
+    ],
+  },
+  {
+    slug: "alimentos",
+    navTitle: "Alimentos",
+    title: "Alimentos",
+    eyebrow: "Segmento",
+    description:
+      "Para fabricantes, distribuidores e comercializadores de alimentos e bebidas que precisam crescer por praca, canal e carteira.",
+    primaryCta: "Mapear canais",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Canais e demanda vistos por regiao",
+    visualMode: "leads",
+    metrics: [
+      { value: "Canais", label: "varejo, food service e distribuicao" },
+      { value: "Mix", label: "orientado por territorio" },
+      { value: "Gaps", label: "de cobertura comercial" },
+    ],
+    features: [
+      {
+        title: "Inteligencia de canais",
+        description:
+          "Identifique concentracoes de pontos de venda, distribuidores e regioes com maior potencial de consumo.",
+        icon: "ShoppingCart",
+      },
+      {
+        title: "Contas com maior fit",
+        description:
+          "Priorize clientes por porte, tipo de estabelecimento, localizacao e oportunidade de mix.",
+        icon: "Target",
+      },
+      {
+        title: "Rotas e distribuicao",
+        description:
+          "Apoie decisoes de rota, cobertura, sell-in e expansao para novas pracas.",
+        icon: "Route",
+      },
+    ],
+    workflow: [
+      "Escolha categorias, canais e areas comerciais.",
+      "Cruze pontos de venda, demanda local e cobertura atual.",
+      "Gere territorios, listas e prioridades por vendedor ou distribuidor.",
+    ],
+    outcomes: [
+      "Mais foco em canais com maior potencial.",
+      "Carteiras comerciais mais bem distribuidas.",
+      "Melhor leitura de onde ampliar presenca e mix.",
+    ],
+  },
+  {
+    slug: "automotivo",
+    navTitle: "Automotivo",
+    title: "Automotivo",
+    eyebrow: "Segmento",
+    description:
+      "Para fabricantes, distribuidores e redes ligadas a pecas, lubrificantes, servicos e implementos automotivos.",
+    primaryCta: "Mapear mercado",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Demanda automotiva por praca e frota",
+    visualMode: "market",
+    metrics: [
+      { value: "Frota", label: "como sinal de demanda local" },
+      { value: "Oficinas", label: "e revendas por territorio" },
+      { value: "Rotas", label: "para distribuicao e campo" },
+    ],
+    features: [
+      {
+        title: "Leitura de mercado local",
+        description:
+          "Compare pracas por densidade de oficinas, lojas, frotas, renda e intensidade competitiva.",
+        icon: "Car",
+      },
+      {
+        title: "Prospeccao de parceiros",
+        description:
+          "Encontre revendas, oficinas e distribuidores com aderencia ao perfil comercial desejado.",
+        icon: "Search",
+      },
+      {
+        title: "Cobertura de canais",
+        description:
+          "Simule onde reforcar distribuicao, representantes e atendimento tecnico.",
+        icon: "Layers",
+      },
+    ],
+    workflow: [
+      "Defina linhas, canais e regioes de interesse.",
+      "Cruze empresas automotivas, frota, renda e concorrencia.",
+      "Priorize contas, polos e rotas de crescimento.",
+    ],
+    outcomes: [
+      "Melhor identificacao de polos automotivos.",
+      "Prospecao mais focada em canais certos.",
+      "Planejamento de cobertura com evidencia territorial.",
+    ],
+  },
+  {
+    slug: "construcao",
+    navTitle: "Construcao",
+    title: "Construcao",
+    eyebrow: "Segmento",
+    description:
+      "Para fabricantes, distribuidores e prestadores ligados a materiais, obras, manutencao e servicos de construcao.",
+    primaryCta: "Mapear obras",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Potencial de construcao por territorio",
+    visualMode: "expansion",
+    metrics: [
+      { value: "Obras", label: "e polos de demanda" },
+      { value: "Revendas", label: "priorizadas por fit" },
+      { value: "Cobertura", label: "de representantes e distribuidores" },
+    ],
+    features: [
+      {
+        title: "Demanda por regiao",
+        description:
+          "Analise bairros e cidades por crescimento, perfil economico, negocios do setor e atividade local.",
+        icon: "HardHat",
+      },
+      {
+        title: "Contas e canais",
+        description:
+          "Priorize lojas, distribuidores, construtoras e prestadores com maior potencial comercial.",
+        icon: "Building2",
+      },
+      {
+        title: "Expansao de atendimento",
+        description:
+          "Planeje pontos, representantes e rotas para regioes com melhor relacao entre demanda e cobertura.",
+        icon: "TrendingUp",
+      },
+    ],
+    workflow: [
+      "Selecione linhas de produto e canais prioritarios.",
+      "Cruze empresas do setor, renda, crescimento e cobertura.",
+      "Monte rankings de pracas, contas e rotas comerciais.",
+    ],
+    outcomes: [
+      "Mais precisao para abrir ou reforcar canais.",
+      "Listas comerciais com contexto de demanda local.",
+      "Menos dispersao na escolha de novas regioes.",
+    ],
+  },
+  {
+    slug: "educacao",
+    navTitle: "Educacao",
+    title: "Educacao",
+    eyebrow: "Segmento",
+    description:
+      "Para universidades, redes de ensino, cursos, franquias educacionais e operacoes que crescem por praca e publico.",
+    primaryCta: "Mapear alunos",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Publicos educacionais por territorio",
+    visualMode: "audience",
+    metrics: [
+      { value: "Publicos", label: "por idade, renda e localizacao" },
+      { value: "Concorrencia", label: "educacional no entorno" },
+      { value: "Unidades", label: "avaliadas por area de influencia" },
+    ],
+    features: [
+      {
+        title: "Potencial de captacao",
+        description:
+          "Compare regioes por publico-alvo, renda, mobilidade, concorrencia e acesso.",
+        icon: "GraduationCap",
+      },
+      {
+        title: "Prospeccao B2B educacional",
+        description:
+          "Identifique empresas, polos e parceiros para campanhas, beneficios e convenios.",
+        icon: "Users",
+      },
+      {
+        title: "Expansao de unidades",
+        description:
+          "Avalie novas unidades, polos, franquias e areas de campanha com criterios territoriais.",
+        icon: "Map",
+      },
+    ],
+    workflow: [
+      "Defina cursos, perfis de aluno e regioes candidatas.",
+      "Cruze dados de publico, renda, concorrencia e acesso.",
+      "Priorize campanhas, parcerias e pontos de expansao.",
+    ],
+    outcomes: [
+      "Campanhas de captacao mais localizadas.",
+      "Melhor escolha de polos e unidades.",
+      "Visao clara de concorrencia e area de influencia.",
+    ],
+  },
+  {
+    slug: "energia-eletrica",
+    navTitle: "Energia eletrica",
+    title: "Energia eletrica",
+    eyebrow: "Segmento",
+    description:
+      "Para empresas de energia, credito energetico, assinatura, solar e eficiencia que vendem por perfil de consumo e regiao.",
+    primaryCta: "Mapear consumo",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Potencial energetico por perfil e local",
+    visualMode: "data",
+    metrics: [
+      { value: "Consumo", label: "estimado por area" },
+      { value: "Empresas", label: "com fit comercial" },
+      { value: "Pracas", label: "priorizadas por oportunidade" },
+    ],
+    features: [
+      {
+        title: "Potencial por territorio",
+        description:
+          "Compare regioes por perfil economico, densidade empresarial e sinais de consumo.",
+        icon: "Zap",
+      },
+      {
+        title: "Leads qualificados",
+        description:
+          "Priorize empresas e condominios com maior aderencia a oferta energetica.",
+        icon: "Target",
+      },
+      {
+        title: "Expansao comercial",
+        description:
+          "Defina pracas, rotas e parceiros para aumentar cobertura com menor custo de aquisicao.",
+        icon: "TrendingUp",
+      },
+    ],
+    workflow: [
+      "Escolha oferta, perfil ideal e regioes de atuacao.",
+      "Cruze empresas, renda, consumo estimado e cobertura.",
+      "Gere rankings de contas e territorios prioritarios.",
+    ],
+    outcomes: [
+      "Mais foco em contas com melhor potencial energetico.",
+      "Planejamento de campo e canais mais objetivo.",
+      "Argumentos comerciais conectados ao territorio.",
+    ],
+  },
+  {
+    slug: "financeiro-beneficios",
+    navTitle: "Financeiro & Beneficios",
+    title: "Financeiro & Beneficios",
+    eyebrow: "Segmento",
+    description:
+      "Para cooperativas, bancos, fintechs, beneficios, adquirencia e solucoes financeiras que crescem por segmento e regiao.",
+    primaryCta: "Mapear contas",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Oportunidade financeira por praca e perfil",
+    visualMode: "leads",
+    metrics: [
+      { value: "Empresas", label: "com fit de produto financeiro" },
+      { value: "Clusters", label: "por setor, porte e regiao" },
+      { value: "Carteiras", label: "priorizadas para vendas" },
+    ],
+    features: [
+      {
+        title: "Segmentacao comercial",
+        description:
+          "Classifique empresas por setor, porte, regiao, maturidade e potencial de adesao.",
+        icon: "CreditCard",
+      },
+      {
+        title: "Prospecao com score",
+        description:
+          "Monte listas com justificativa de fit para cooperativas, beneficios, credito ou meios de pagamento.",
+        icon: "Target",
+      },
+      {
+        title: "Expansao de carteiras",
+        description:
+          "Compare areas de atuacao e encontre regioes com maior densidade de clientes-alvo.",
+        icon: "Layers",
+      },
+    ],
+    workflow: [
+      "Defina produto financeiro, ICP e criterios de elegibilidade.",
+      "Cruze empresas, setores, localizacao e sinais economicos.",
+      "Priorize carteiras, campanhas e regioes de aquisicao.",
+    ],
+    outcomes: [
+      "Menos dispersao na prospeccao financeira.",
+      "Carteiras com melhor potencial por territorio.",
+      "Expansao comercial orientada por segmentos reais.",
+    ],
+  },
+  {
+    slug: "franquia-varejo",
+    navTitle: "Franquia & Varejo",
+    title: "Franquia & Varejo",
+    eyebrow: "Segmento",
+    description:
+      "Para franqueadoras, redes varejistas e operacoes multicanal que precisam escolher pontos, territorios e publicos.",
+    primaryCta: "Avaliar pontos",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Expansao varejista com criterio territorial",
+    visualMode: "expansion",
+    metrics: [
+      { value: "Pontos", label: "comparados por potencial" },
+      { value: "Fluxo", label: "e publico no entorno" },
+      { value: "Rede", label: "sem sobreposicao desnecessaria" },
+    ],
+    features: [
+      {
+        title: "Escolha de pontos",
+        description:
+          "Compare locais por publico, renda, concorrencia, fluxo, cobertura e area de influencia.",
+        icon: "ShoppingBag",
+      },
+      {
+        title: "Prospecao de franqueados",
+        description:
+          "Identifique regioes e perfis comerciais aderentes ao plano de expansao.",
+        icon: "Search",
+      },
+      {
+        title: "Gestao de territorios",
+        description:
+          "Evite canibalizacao e organize areas de atendimento para lojas, franquias e canais.",
+        icon: "Map",
+      },
+    ],
+    workflow: [
+      "Defina formatos de loja, publico e regioes candidatas.",
+      "Cruze demanda, concorrencia, unidades atuais e cobertura.",
+      "Ranqueie pontos e territorios por potencial e risco.",
+    ],
+    outcomes: [
+      "Decisoes de ponto mais defensaveis.",
+      "Menos risco de sobreposicao entre unidades.",
+      "Plano de expansao mais facil de comunicar.",
+    ],
+  },
+  {
+    slug: "saude",
+    navTitle: "Saude",
+    title: "Saude",
+    eyebrow: "Segmento",
+    description:
+      "Para distribuidores, farmaceuticas, operadoras, cooperativas, clinicas e redes de saude que atuam por territorio.",
+    primaryCta: "Mapear saude",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Acesso, demanda e rede vistos por local",
+    visualMode: "audience",
+    metrics: [
+      { value: "Rede", label: "clinicas, farmacias e parceiros" },
+      { value: "Publico", label: "por perfil e area de influencia" },
+      { value: "Cobertura", label: "assistencial e comercial" },
+    ],
+    features: [
+      {
+        title: "Inteligencia territorial de saude",
+        description:
+          "Compare regioes por populacao, renda, rede existente, concorrencia e acesso.",
+        icon: "HeartPulse",
+      },
+      {
+        title: "Prospecao de canais",
+        description:
+          "Priorize clinicas, farmacias, distribuidores e parceiros com maior aderencia comercial.",
+        icon: "Building2",
+      },
+      {
+        title: "Expansao e cobertura",
+        description:
+          "Avalie novas unidades, areas assistenciais, distribuicao e presenca regional.",
+        icon: "Layers",
+      },
+    ],
+    workflow: [
+      "Defina oferta, publico, rede e regioes de interesse.",
+      "Cruze populacao, empresas de saude, renda e concorrencia.",
+      "Priorize parceiros, unidades e territorios de cobertura.",
+    ],
+    outcomes: [
+      "Melhor leitura de acesso e demanda local.",
+      "Canais de saude priorizados por fit territorial.",
+      "Expansao com criterios claros de cobertura.",
+    ],
+  },
+  {
+    slug: "telecom",
+    navTitle: "Telecom",
+    title: "Telecom",
+    eyebrow: "Segmento",
+    description:
+      "Para operadoras, provedores de internet, fibra, conectividade e servicos digitais que vendem por cobertura e demanda local.",
+    primaryCta: "Mapear cobertura",
+    secondaryCta: "Ver plataforma",
+    heroMetric: "Cobertura e demanda telecom no mesmo mapa",
+    visualMode: "data",
+    metrics: [
+      { value: "Cobertura", label: "por area e rota" },
+      { value: "Demanda", label: "residencial e empresarial" },
+      { value: "Churn", label: "tratado com contexto local" },
+    ],
+    features: [
+      {
+        title: "Mercado por cobertura",
+        description:
+          "Compare regioes por infraestrutura, demanda potencial, concorrencia e densidade de clientes.",
+        icon: "Satellite",
+      },
+      {
+        title: "Prospecao conectada ao mapa",
+        description:
+          "Encontre empresas, condominios e areas com fit para fibra, dados ou conectividade.",
+        icon: "Search",
+      },
+      {
+        title: "Expansao de rede",
+        description:
+          "Priorize novas rotas, areas comerciais e investimentos com base em potencial de retorno.",
+        icon: "Route",
+      },
+    ],
+    workflow: [
+      "Defina produtos, cobertura atual e regioes candidatas.",
+      "Cruze empresas, densidade, concorrencia e infraestrutura.",
+      "Ranqueie areas para vendas, retencao e expansao de rede.",
+    ],
+    outcomes: [
+      "Mais precisao para expandir rede e cobertura.",
+      "Campanhas B2B e B2C conectadas ao territorio.",
+      "Melhor visao de concorrencia e potencial local.",
+    ],
+  },
+];
+
 export const homeHighlights = [
   {
     label: "Para estrategia",
@@ -454,4 +937,8 @@ export function getSolution(slug: string) {
 
 export function getUseCase(slug: string) {
   return useCases.find((useCase) => useCase.slug === slug);
+}
+
+export function getSegment(slug: string) {
+  return segments.find((segment) => segment.slug === slug);
 }
