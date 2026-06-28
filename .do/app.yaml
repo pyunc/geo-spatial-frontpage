@@ -1,0 +1,18 @@
+name: rua1-ai
+region: nyc
+services:
+  - name: web
+    environment_slug: node-js
+    github:
+      repo: your-org/rua1-ai
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    run_command: npm run start
+    http_port: 3000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    envs:
+      - key: NODE_ENV
+        value: production
+        scope: RUN_AND_BUILD_TIME
