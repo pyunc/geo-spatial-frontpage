@@ -1,50 +1,168 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MousePointer2, Play, ShieldCheck } from "lucide-react";
+import { ArrowRight, Megaphone, Play, Route, Smartphone, Users } from "lucide-react";
+import { AnalysisVideoTabs } from "@/components/analysis-video-tabs";
 import { ButtonLink } from "@/components/button-link";
+import { DataUniverse } from "@/components/data-universe";
 import { FeatureIcon } from "@/components/icons";
 import { ProductMap } from "@/components/product-map";
-import { brand, homeHighlights, solutions, useCases } from "@/data/site";
+import { SegmentCarousel } from "@/components/segment-carousel";
+import { homeHighlights, solutions, useCases } from "@/data/site";
+
+const platformStats = [
+  { value: "7%", label: "do PIB do Brasil mapeado" },
+  { value: "+130", label: "Bases de dados" },
+  { value: "+20", label: "Países cobertos" },
+  { value: "+50K", label: "Cidades cobertas" },
+  { value: "+60M", label: "Empresas cadastradas" },
+  { value: "+100M", label: "Dispositivos móveis geolocalizados" },
+];
+
+const mobileApplications = [
+  {
+    title: "Audience",
+    description: "Para campanhas de mídia paga que buscam eficiência, menor custo por conversão e audiência qualificada.",
+    href: "/solucoes/audience",
+    icon: Smartphone,
+  },
+  {
+    title: "Map Builder",
+    description: "Para prospecção B2B hiperqualificada, inteligência competitiva e estratégias territoriais mais efetivas.",
+    href: "/solucoes/mapa-inteligente",
+    icon: Route,
+  },
+];
+
+const mobileSignals = [
+  {
+    value: "+100",
+    suffix: "milhões de Celulares",
+    description: "Geolocalizados e monitorados para criar insights únicos",
+    icon: Smartphone,
+  },
+  {
+    value: "",
+    suffix: "Fluxo de pessoas por via e áreas de influência de estabelecimentos",
+    description: "",
+    icon: Route,
+  },
+  {
+    value: "",
+    suffix: "Quantidade de consumidores e sua classe de renda em cada estabelecimento",
+    description: "",
+    icon: Users,
+  },
+  {
+    value: "",
+    suffix: "Segmentação de público para campanhas em plataformas de mídia paga",
+    description: "",
+    icon: Megaphone,
+  },
+];
 
 export default function Home() {
   return (
     <main>
-      <section className="home-hero">
-        <ProductMap immersive mode="market" />
-        <div className="home-hero__shade" />
-        <div className="home-hero__content mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="eyebrow">Inteligencia geoespacial para go-to-market</p>
-          <h1>{brand.name}</h1>
+      <section className="home-hero home-hero--data">
+        <DataUniverse />
+        <div className="home-hero__content home-hero__content--data mx-auto max-w-7xl px-5 lg:px-8">
+          {/* <p className="eyebrow">rua1.ai / Inteligência geoespacial</p> */}
+          <h1>
+            Inteligência artificial territorial
+            <span> com contexto humano</span>
+          </h1>
           <p>
-            Mapeie mercados, priorize contas e escolha regioes de expansao com dados territoriais
-            transformados em acao comercial.
+            A plataforma que acelera decisões e identifica as melhores oportunidades para expandir e gerar novos negócios.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/contato">Agendar demo</ButtonLink>
-            <ButtonLink href="#solucoes" variant="secondary">
-              Ver solucoes
-            </ButtonLink>
+            <ButtonLink href="/contato">Falar com especialista</ButtonLink>
           </div>
         </div>
       </section>
 
-      <section className="trust-strip" aria-label="Indicadores da plataforma">
-        <div className="mx-auto grid max-w-7xl gap-4 px-5 py-7 md:grid-cols-3 lg:px-8">
-          <div>
-            <ShieldCheck aria-hidden="true" className="h-5 w-5" />
-            <span>Desenhado para dados LGPD-first</span>
+      <section className="numbers-strip" aria-label="Números gerais da plataforma">
+        <div className="numbers-strip__grid mx-auto max-w-7xl px-5 py-12 lg:px-8">
+          {platformStats.map((stat) => (
+            <div className="numbers-strip__item" key={stat.label}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mobile-data-section" aria-labelledby="mobile-data-title">
+        <div className="mobile-data-section__image" />
+        <div className="mobile-data-section__content mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <div className="mobile-data-section__copy">
+            <p className="mobile-data-section__eyebrow">Dados Mobile</p>
+            <h2 id="mobile-data-title">
+              Revolucione seu Go-To-Market com dados exclusivos de movimentação de celulares
+            </h2>
+            <p>
+              A rua1.ai analisa sinais de localização para mapear hábitos de consumo, otimizar campanhas
+              e enriquecer análises de mercado com dados consentidos, anonimizados e alinhados à LGPD.
+            </p>
+
+            <div className="mobile-data-section__links">
+              {mobileApplications.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <Link href={item.href} key={item.title}>
+                    <Icon aria-hidden="true" className="h-7 w-7" />
+                    <span>
+                      <strong>{item.title}</strong>
+                      <small>Saiba mais →</small>
+                    </span>
+                    <p>{item.description}</p>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-          <div>
-            <MousePointer2 aria-hidden="true" className="h-5 w-5" />
-            <span>Fluxo pensado para negocio, nao apenas analistas</span>
-          </div>
-          <div>
-            <CheckCircle2 aria-hidden="true" className="h-5 w-5" />
-            <span>Validacao comercial rapida com dados e mapas</span>
+
+          <div className="mobile-data-section__cards">
+            {mobileSignals.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article className="mobile-data-card" key={item.suffix}>
+                  <Icon aria-hidden="true" className="h-8 w-8" />
+                  {item.value ? (
+                    <strong>
+                      {item.value}
+                      <span>{item.suffix}</span>
+                    </strong>
+                  ) : (
+                    <strong className="mobile-data-card__plain">{item.suffix}</strong>
+                  )}
+                  {item.description ? <p>{item.description}</p> : null}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="content-band" id="solucoes">
+      <section className="analysis-showcase" aria-labelledby="analysis-showcase-title">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <div className="analysis-showcase__heading">
+            <p className="analysis-showcase__eyebrow">Análises</p>
+            <h2 id="analysis-showcase-title">Inteligência de Mercado que direciona sua estratégia comercial</h2>
+            <p>
+              A rua1.ai combina dados geolocalizados, perfis demográficos e variáveis de mercado para entregar
+              análises que orientam decisões estratégicas, fortalecem sua presença territorial e revelam novas
+              oportunidades de expansão.
+            </p>
+          </div>
+
+          <AnalysisVideoTabs />
+        </div>
+      </section>
+
+      <SegmentCarousel />
+
+      {/* <section className="content-band" id="solucoes">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="section-heading">
             <p className="eyebrow">Solucoes</p>
@@ -67,9 +185,20 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="demo-band" id="demo">
+      
+
+
+
+
+
+
+
+
+
+
+      {/* <section className="demo-band" id="demo">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1fr_1fr] lg:px-8">
           <div className="section-copy">
             <p className="eyebrow">Produto</p>
@@ -88,9 +217,9 @@ export default function Home() {
           </div>
           <ProductMap compact mode="leads" />
         </div>
-      </section>
+      </section> */}
 
-      <section className="content-band content-band--light">
+      {/* <section className="content-band content-band--light">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="section-heading">
             <p className="eyebrow">Casos de uso</p>
@@ -107,9 +236,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="content-band">
+      {/* cases */}
+
+      
+
+
+
+
+
+      {/* <section className="content-band">
         <div className="mx-auto grid max-w-7xl gap-6 px-5 py-20 md:grid-cols-3 lg:px-8">
           {homeHighlights.map((item) => (
             <article className="highlight-card" key={item.title}>
@@ -119,7 +256,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="final-cta">
         <div className="mx-auto max-w-7xl px-5 py-20 text-center lg:px-8">
