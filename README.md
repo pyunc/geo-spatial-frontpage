@@ -63,6 +63,8 @@ HTTP port: 3000
 assets required by DigitalOcean's Node service runtime.
 
 Use `.do/app.yaml` to create or update the app from `pyunc/geo-spatial-frontpage`.
+The DigitalOcean account must have its GitHub integration connected with access
+to that repository before `doctl apps create --spec .do/app.yaml` can deploy it.
 
 Before deploying, run:
 
