@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { segments, solutions, useCases } from "@/data/site";
 
-const baseUrl = "https://rua1.ai";
+const baseUrl = "https://rua1.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

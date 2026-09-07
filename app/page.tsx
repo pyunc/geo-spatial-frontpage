@@ -63,20 +63,21 @@ export default function Home() {
   return (
     <main>
       <section className="home-hero home-hero--data">
-        <DataUniverse />
         <div className="home-hero__content home-hero__content--data mx-auto max-w-7xl px-5 lg:px-8">
-          {/* <p className="eyebrow">rua1.ai / Inteligência geoespacial</p> */}
+          <p className="eyebrow">rua1.ai / Inteligência geoespacial</p>
           <h1>
-            Inteligência artificial territorial
-            <span> com contexto humano</span>
+            Inteligência espacial para <span className="italic">  Go-To-Market</span>
           </h1>
           <p>
-            A plataforma que acelera decisões e identifica as melhores oportunidades para expandir e gerar novos negócios.
+            Rua1.ai automatiza a análise territorial, identifica oportunidades e entrega recomendações estratégicas — tudo em uma plataforma que aprende com o contexto do seu negócio.
+            Não é apenas uma ferramenta de análise.
+            A inteligência por trás de cada decisão de crescimento.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contato">Falar com especialista</ButtonLink>
           </div>
         </div>
+        <DataUniverse />
       </section>
 
       <section className="numbers-strip" aria-label="Números gerais da plataforma">

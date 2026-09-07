@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   },
   description:
     "Plataforma de inteligencia geoespacial para mapear mercados, priorizar contas B2B e planejar expansao.",
-  metadataBase: new URL("https://rua1.ai"),
+  metadataBase: new URL("https://rua1.com.br"),
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#13201b",
+  themeColor: "#fffdf8",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

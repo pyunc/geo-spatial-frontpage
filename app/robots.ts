@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://rua1.ai/sitemap.xml",
+    sitemap: "https://rua1.com.br/sitemap.xml",
   };
 }

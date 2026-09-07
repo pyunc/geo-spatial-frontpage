@@ -11,7 +11,7 @@ MVP frontend for `rua1.ai`, a geospatial intelligence product inspired by modern
 
 ## Run Locally
 
-Install Node.js 20+ first, then:
+Install Node.js 22 first, then:
 
 ```bash
 npm install
@@ -43,7 +43,15 @@ Current routes:
 
 The project is configured for DigitalOcean App Platform with `output: "standalone"` in `next.config.ts`.
 
-Typical App Platform settings:
+Production domain:
+
+```txt
+Primary: rua1.com.br
+Alias: www.rua1.com.br redirects to rua1.com.br
+DNS: managed in GoDaddy
+```
+
+App Platform settings:
 
 ```txt
 Build command: npm run build
@@ -51,4 +59,19 @@ Run command: npm run start
 HTTP port: 3000
 ```
 
-If you use `.do/app.yaml`, replace `your-org/rua1-ai` with your real GitHub repository.
+`npm run build` also prepares the `.next/standalone` bundle with the static
+assets required by DigitalOcean's Node service runtime.
+
+Use `.do/app.yaml` to create or update the app from `pyunc/geo-spatial-frontpage`.
+
+Before deploying, run:
+
+```bash
+npm run check:prod
+```
+
+After DigitalOcean creates the app, add the custom domains in App Platform using
+the "You manage your domain" option. In GoDaddy, keep existing email records and
+point `www` to the DigitalOcean CNAME target. For the apex `@`, use the A
+records/IPs that DigitalOcean shows if GoDaddy cannot flatten a CNAME at root.
+Add any TXT verification records requested by DigitalOcean.
