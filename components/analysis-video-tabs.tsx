@@ -9,23 +9,19 @@ const analysisVideos = [
   },
   {
     title: "Análises Rápidas Personalizáveis",
-    src: "https://cdn.datlo.com/wordpress-media/painel_analises_rapidas_compactado.mp4",
+    src: "https://geo-spatial-project.fra1.cdn.digitaloceanspaces.com/Screencast%20From%202026-07-10%2017-39-29.mp4",
   },
   {
     title: "Upload e Cruzamento de dados",
-    src: "https://cdn.datlo.com/wordpress-media/importacao_e_cruzamento_compactado.mp4",
+    src: "https://geo-spatial-project.fra1.cdn.digitaloceanspaces.com/Screencast%20From%202026-07-10%2017-39-29.mp4",
   },
   {
     title: "Recomendação de dados",
-    src: "https://cdn.datlo.com/wordpress-media/importacao_e_cruzamento_compactado.mp4",
+    src: "https://geo-spatial-project.fra1.cdn.digitaloceanspaces.com/Screencast%20From%202026-07-10%2017-39-29.mp4",
   },
   {
-    title: "Recomendação de dados",
-    src: "https://cdn.datlo.com/wordpress-media/importacao_e_cruzamento_compactado.mp4",
-  },
-  {
-    title: "Recomendação de dados",
-    src: "https://cdn.datlo.com/wordpress-media/importacao_e_cruzamento_compactado.mp4",
+    title: "Análises de Expansão e Localização",
+    src: "https://geo-spatial-project.fra1.cdn.digitaloceanspaces.com/Screencast%20From%202026-07-10%2017-39-29.mp4",
   },
 ];
 
