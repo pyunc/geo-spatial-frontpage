@@ -1,5 +1,5 @@
-name: rua1-ai
-region: nyc
+name: geo-spatial-frontpage-app
+region: fra
 domains:
   - domain: rua1.com.br
     type: PRIMARY
@@ -8,15 +8,16 @@ domains:
     type: ALIAS
     minimum_tls_version: "1.2"
 services:
-  - name: web
+  - name: geo-spatial-frontpage
     environment_slug: node-js
     github:
       repo: pyunc/geo-spatial-frontpage
       branch: main
       deploy_on_push: true
+    source_dir: /
     build_command: npm run build
     run_command: npm run start
-    http_port: 3000
+    http_port: 8080
     instance_count: 1
     instance_size_slug: apps-s-1vcpu-0.5gb
     envs:
@@ -46,4 +47,4 @@ ingress:
         path:
           prefix: /
       component:
-        name: web
+        name: geo-spatial-frontpage
